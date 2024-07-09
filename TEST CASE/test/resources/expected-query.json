@@ -1,0 +1,37 @@
+{
+  "bool": {
+    "filter": [
+      {
+        "term": {
+          "media_type": {
+            "value": "image"
+          }
+        }
+      }
+    ],
+    "must": [
+      {
+        "query_string": {
+          "default_operator": "and",
+          "query": "Oslo"
+        }
+      },
+      {
+        "term": {
+          "media_family": {
+            "value": "editorial"
+          }
+        }
+      }
+    ],
+    "must_not": [
+      {
+        "term": {
+          "media_family": {
+            "value": "graphic"
+          }
+        }
+      }
+    ]
+  }
+}
